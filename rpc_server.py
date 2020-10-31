@@ -25,12 +25,13 @@ class cpabe():
         try:
             pt = self.cpabe.decrypt(username, ct.data)   # 解析返回错误，高优
             print("service dec pt =", pt)
-            if pt == 0: return "DEC FAIL"
+            if pt == 0 or len(pt) < 2:
+		 return b"DEC FAIL"
             return pt
 
         except Exception as e:
             print(e)
-            return "DEC FAIL0"
+            return b"DEC FAIL0"
     def generate_userkey(self, username, userattri):
 
         try:

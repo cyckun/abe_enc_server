@@ -20,13 +20,25 @@ def cpabe_userkey_cli(username, userattri):
 if __name__ == '__main__':
     plain = b"hello rpc"   # must bytes format
     policy = "Dept:sec"
-    ct = cpabe_enc_cli(plain, policy)
+
+    with open("./sk.txt", "rb") as f:
+        buffer = f.read()
+        f.close()
+    print("typeof buffer ", type(buffer))
+    # ct = ""
+    ct = cpabe_enc_cli(buffer, policy)
     print("ct type:", type(ct))
     with open("./pt.txt", "wb") as f:
         f.write(ct)
         f.close()
+    with open("./ct.txt", "wb") as f:
+        f.write(ct)
+        f.close()
 
     sk = cpabe_userkey_cli("cyc1","Dept:sec")
-    print("sk = ", sk)
-    pt = cpabe_dec_cli(ct, "cyc1")
+    # print("sk = ", sk)
+    with open("./ct.txt", "rb") as f:
+        ct1 = f.read()
+        f.close()
+    pt = cpabe_dec_cli(ct1, "cyc1")
     print("pt = ", pt)
