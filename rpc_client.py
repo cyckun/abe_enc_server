@@ -18,7 +18,7 @@ def cpabe_userkey_cli(username, userattri):
     return sk.data   # whether sk is returned, think lator;
 
 if __name__ == '__main__':
-    plain = "hello rpc"
+    plain = b"hello rpc"   # must bytes format
     policy = "Dept:sec"
     ct = cpabe_enc_cli(plain, policy)
     print("ct type:", type(ct))

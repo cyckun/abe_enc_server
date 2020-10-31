@@ -13,7 +13,7 @@ class cpabe():
         self.cpabe.generateParams()
     def enc(self, message, policy):
         print("enc service is called.")
-        ct = self.cpabe.encrypt(policy, message)
+        ct = self.cpabe.encrypt(policy, message.data)
         return ct
     def dec(self, ct, username):
         key_path = "./keys/" + username + "_sk.txt"
