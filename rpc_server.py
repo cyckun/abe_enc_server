@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+    :author: Cao YongChao
+    :mail: cyckun@aliyun.com
+    :copyright: © 2020 Cao YongChao
+    :license: MIT, see LICENSE for more details.
+"""
+
 from __future__ import print_function
 import pyopenabe
 from xmlrpc.server import SimpleXMLRPCServer

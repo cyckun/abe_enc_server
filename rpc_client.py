@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+    :author: Cao YongChao
+    :mail: cyckun@aliyun.com
+    :copyright: © 2020 Cao YongChao
+    :license: MIT, see LICENSE for more details.
+"""
 from xmlrpc.client import ServerProxy
 
 def cpabe_enc_cli(plain, policy):
