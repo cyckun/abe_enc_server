@@ -34,7 +34,7 @@ class cpabe():
             pt = self.cpabe.decrypt(username, ct.data)   # 解析返回错误，高优
             print("service dec pt =", pt)
             if pt == 0 or len(pt) < 2:
-		 return b"DEC FAIL"
+                return b"DEC FAIL"
             return pt
 
         except Exception as e:
